@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  auth-system:
+    build: .
+    container_name: cyberguard-auth-system
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=production
+      - PORT=4000
+      - ISSUER_URL=https://auth.cyberguard.local
+      - KEY_ENCRYPTION_KEY=0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+      - SESSION_SECRET=production-grade-session-secret-32-chars-minimum
+      - DATABASE_PATH=/app/data/cyberguard_auth_db.json
+      - AUDIT_LOG_PATH=/app/data/audit_chain.json
+    volumes:
+      - auth-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  auth-data:
