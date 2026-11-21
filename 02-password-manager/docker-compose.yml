@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  password-manager:
+    build: .
+    container_name: cyberguard-password-manager
+    ports:
+      - "4001:4001"
+    environment:
+      - NODE_ENV=production
+      - PORT=4001
+      - SESSION_SECRET=production-grade-session-secret-32-chars-minimum
+      - DATABASE_PATH=/app/data/cyberguard_vault_db.json
+    volumes:
+      - vault-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  vault-data:

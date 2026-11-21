@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Cyberguard Password Vault",
+  "version": "1.0.0",
+  "description": "Zero-knowledge credential autofill with exact-origin matching",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Cyberguard Vault"
+  },
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://*/*",
+    "http://localhost/*"
+  ]
+}
