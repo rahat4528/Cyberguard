@@ -1,0 +1,22 @@
+{
+  "name": "03-two-factor-authentication-system",
+  "version": "1.0.0",
+  "description": "Cyberguard Two-Factor Authentication System - Standalone Local-First Authenticator (RFC 6238 / RFC 4226)",
+  "type": "module",
+  "scripts": {
+    "start": "tsx backend/server.ts",
+    "dev": "tsx watch backend/server.ts",
+    "test": "tsx --test tests/*.test.ts"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

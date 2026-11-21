@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  authenticator-sync:
+    build: .
+    container_name: cyberguard-2fa-sync
+    ports:
+      - "4002:4002"
+    environment:
+      - NODE_ENV=production
+      - PORT=4002
+      - SYNC_DATABASE_PATH=/app/data/cyberguard_2fa_sync_db.json
+    volumes:
+      - sync-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  sync-data:
